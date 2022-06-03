@@ -180,6 +180,13 @@ for (let i = 0; i < 10; i++) {
 // Q1. iterate from 0 to 10 and print only even numbers (use continue) 짝수
 
 for (let i = 0; i < 11; i++) {
+    if (i % 2 !== 0) {
+        continue;
+    }
+    console.log(`q1. ${i}`);
+}
+
+for (let i = 0; i < 11; i++) {
     if (i % 2 === 0) {
         console.log(`q1. ${i}`);
     }
