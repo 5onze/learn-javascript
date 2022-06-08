@@ -130,3 +130,60 @@ function randomQuiz(answer, printYes, printNo) {
         printNo();
     }
 }
+// anonymous function (이름없는 함수)
+const printYes = function () {
+    console.log('yes!');
+}
+
+// named funtion
+// better debugging in debugger's stack traces (디버깅)
+// recursions
+const printNo = function print () {
+    console.log('no!');
+}
+randomQuiz('wrong', printYes, printNo);
+randomQuiz('love you', printYes, printNo);
+
+
+// Arrow function 간결하게 쓸수있는 함수
+// always anonymouse
+// const simplePrint = function () {
+//     console.log('simplePrint!');
+// }
+
+const simplePrint = () => console.log('simplePrint!');
+const add = (a , b) => a + b;
+const simpleMultiply = (a, b) => {
+    // do sometiong more
+    return a * b;
+}
+
+// IIFE: Immediately Invoked Function Expression
+// 함수 바로 호출
+(function hello() {
+    console.log('IIFE');
+})();
+
+// Fun quiz time🧡
+// function calculate(command, a, b)
+// command: add, substract, divide, multiply, remainder
+
+function calculate(command, a, b) {
+    switch (command) {
+        case 'add':
+            return a + b;
+        case 'substract':
+            return a - b;
+        case 'divide':
+            return a / b;
+        case 'multiply':
+            return a * b;
+        case 'remainder':
+            return a % b;
+        default:
+            throw Error('unknown command');
+    }
+}
+console.log(calculate('add', 2, 3));
+
+
